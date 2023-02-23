@@ -1,6 +1,6 @@
-import { HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -10,11 +10,30 @@ export class CatalogueService {
   constructor(private http: HttpClient) {}
 
   public getResource(url: string) { 
-    return this.http.get(this.host + url);
+    return this.http.get(this.host + url).pipe(map((res:any)=>{
+      return res;
+    }));
   }
-
-  public getResource2(url) {
+  public DeleteResource(url: string) { 
+    return this.http.delete(this.host + url).pipe(map((res:any)=>{
+      return res;
+    }));
+  }
+  uploadcat(data: any){
+    
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf8',
+      });
+    let options = { headers: headers };
+        return this.http.post<any>("http://localhost:8080/api/catagory",JSON.stringify(data),options);
+    
+      
+    }
+  public getResource2(url: string) {
     return this.http.get(url);
+  }
+  public getResource3(url: string) {
+    return this.http.get(this.host +url);
   }
   uploadPhotoProduct(file: File, idProduct): Observable<HttpEvent<{}>> {
     let formdata: FormData = new FormData();

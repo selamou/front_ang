@@ -64,6 +64,7 @@ export class ProductComponent implements OnInit {
 
   onUpdateProduct(data) {
     let url = this.currentProduct._links.self.href;
+    console.log(url)
     this.catalService.patchResource(url, data).subscribe(
       (d) => {
         this.currentProduct = d;

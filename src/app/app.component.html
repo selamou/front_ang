@@ -64,6 +64,7 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a [routerLink]="['/products/1/0']" routerLinkActive="router-link-active"  class="nav-item nav-link active">Home</a>
   
+                            <a *ngIf="this.authService.isAdmin()" (click)="onCatagoryManage()" class="nav-item nav-link">Manage catagory</a>
                             <a *ngIf="this.authService.isAdmin()" (click)="onUserManage()" class="nav-item nav-link">Manage Users</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">

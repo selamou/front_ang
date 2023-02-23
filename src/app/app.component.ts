@@ -62,6 +62,10 @@ export class AppComponent implements OnInit {
     this.router.navigateByUrl('/users');
 
   }
+  onCatagoryManage(){
+    this.router.navigateByUrl('/category');
+
+  }
   onLogout() {
     //this.caddyService.emptyCaddy();
     this.authService.logout();

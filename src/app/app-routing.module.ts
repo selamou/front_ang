@@ -7,6 +7,9 @@ import { CaddyComponent } from './caddy/caddy.component';
 import { ClientComponent } from './client/client.component';
 import { PaymentComponent } from './payment/payment.component';
 import { UsersComponent } from './users/users.component';
+import { CatagoryComponent } from './catagory/catagory.component';
+import { CatagoryformComponent } from './catagoryform/catagoryform.component';
+
 
 const routes: Routes = [
   { path: 'products/:p1/:p2', component: ProductsComponent },
@@ -17,6 +20,8 @@ const routes: Routes = [
   { path: 'client', component: ClientComponent },
   { path: 'payment/:orderID', component: PaymentComponent },
   { path: 'users', component: UsersComponent },
+  { path: 'categoryadd', component: CatagoryformComponent },
+  { path: 'category', component: CatagoryComponent },
 ];
 
 @NgModule({
