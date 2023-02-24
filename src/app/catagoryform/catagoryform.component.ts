@@ -40,7 +40,7 @@ export class CatagoryformComponent implements OnInit {
     response =>{
       // console.log(user)
       console.log(response)
-     
+      this.router.navigateByUrl('/category');
       
     },
     // error =>{

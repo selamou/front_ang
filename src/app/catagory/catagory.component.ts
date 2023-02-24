@@ -40,4 +40,7 @@ export class CatagoryComponent implements OnInit {
 
     
   }
+  gotoadd(){
+    this.router.navigateByUrl('/categoryadd');
+  }
 }
